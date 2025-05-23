@@ -1,0 +1,57 @@
+# === Java / Maven ===
+target/
+*.class
+*.jar
+*.war
+*.ear
+
+# === Eclipse ===
+.settings/
+.project
+.classpath
+
+# === IntelliJ IDEA (in case opened in IntelliJ) ===
+.idea/
+*.iml
+*.iws
+out/
+
+# === Logs ===
+*.log
+log/
+
+# === Test Output ===
+test-output/
+surefire-reports/
+screenshots/
+extent-reports/
+reports/
+
+# === System Files ===
+.DS_Store
+Thumbs.db
+
+# === VSCode (if used) ===
+.vscode/
+
+# === Environment Files ===
+.env
+*.env
+
+# === JUnit/TestNG specific ===
+*.xml
+*.tmp
+
+# === Jenkins Artifacts ===
+*.lastStarted
+*.lastSuccessful
+*.lastFailedBuild
+*.build.xml
+
+# === OS temp files ===
+*.swp
+*.swo
+~$*
+
+# === Git Ignore This File Itself ===
+.gitignore
