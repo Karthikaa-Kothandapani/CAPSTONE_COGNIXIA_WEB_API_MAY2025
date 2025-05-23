@@ -1,57 +1,52 @@
-# === Java / Maven ===
-target/
+# === Java ===
 *.class
 *.jar
 *.war
 *.ear
 
-# === Eclipse ===
-.settings/
-.project
-.classpath
+# === Maven ===
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
 
-# === IntelliJ IDEA (in case opened in IntelliJ) ===
-.idea/
+# === Eclipse IDE ===
+.classpath
+.project
+.settings/
+.apt_generated/
+.factorypath
+.loadpath
+
+# === IntelliJ IDEA (in case of team members using it) ===
 *.iml
+.idea/
 *.iws
+*.ipr
 out/
 
 # === Logs ===
 *.log
-log/
 
-# === Test Output ===
-test-output/
-surefire-reports/
-screenshots/
-extent-reports/
-reports/
-
-# === System Files ===
+# === OS Specific ===
 .DS_Store
 Thumbs.db
 
-# === VSCode (if used) ===
-.vscode/
+# === Test Reports ===
+test-output/
+surefire-reports/
+screenshots/
+
+# === Xray Config Files (optional if generated) ===
+*.json
+xray-upload-config.properties
 
 # === Environment Files ===
 .env
 *.env
 
-# === JUnit/TestNG specific ===
-*.xml
-*.tmp
-
-# === Jenkins Artifacts ===
-*.lastStarted
-*.lastSuccessful
-*.lastFailedBuild
-*.build.xml
-
-# === OS temp files ===
-*.swp
-*.swo
-~$*
-
-# === Git Ignore This File Itself ===
-.gitignore
+# === Git Ignore Itself ===
+!.gitignore
