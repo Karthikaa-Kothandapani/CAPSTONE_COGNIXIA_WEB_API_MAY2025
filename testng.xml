@@ -1,0 +1,13 @@
+<suite name="Capstone Suite">
+ 
+<listeners>
+<listener class-name="utils.TestListener"/>
+<listener class-name="utils.ExtentTestListener"/>
+</listeners>
+ 
+  <test name="Web Functional Tests">
+<classes>
+<class name="tests.TestWebsite"/>
+</classes>
+</test>
+</suite>
