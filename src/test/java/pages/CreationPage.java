@@ -85,6 +85,9 @@ public class CreationPage extends BaseTest {
     
     @FindBy(xpath = "//button[@data-qa='preview-form-button']")
     WebElement previewButton;
+    
+    @FindBy(xpath = "//div[text()='My workspace']")
+    WebElement workspace;
 
     public CreationPage(WebDriver driver) {
         this.driver = driver;
@@ -101,6 +104,17 @@ public class CreationPage extends BaseTest {
     	WaitUtil.waitForClickable(driver, addElementPageClose).click();
     }
     
+    // Check if exited from Preview
+    public boolean checkIfExitedPreview() {
+    	return WaitUtil.waitForVisible(driver, workspace).isDisplayed();
+    }
+    
+    
+    // Go To workspace
+    public void goToWorkspace () {
+    	WaitUtil.waitForClickable(driver, workspace).click();
+    }
+  
     // Change the Form Name
     public void changeName(String newName) {
         WaitUtil.waitForClickable(driver, formNameLocator);

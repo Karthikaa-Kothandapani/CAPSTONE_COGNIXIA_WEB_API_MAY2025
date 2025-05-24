@@ -24,6 +24,8 @@ public class Constants {
 	public static final String test3 = "Test Login with Valid Credentials";
 	public static final String test4 = "Test Form Creation Functionality with All form Elements";
 	public static final String test5 = "Test Form preview Functionality";
+	public static final String test6 = "Test View Mode Filter Defects";
+	public static final String test7 = "Test Grid Mode Filter Defects";
 	
 	// Logs
 	public static final String logStartTest = "The Test has Started!";
@@ -92,6 +94,14 @@ public class Constants {
 	public static final String rightQuestion = "The Expected Question should be Displayed";
 	public static final String questionPageHasValue = "The Question Page should not be Empty";
 	public static final String previewQuestionFields = "All the input Elements in the Question Preview should be accessible";
+	public static final String exitedPreview = "Exit from Preview";
+	
+	// Defects
+	public static final String filterCreated = "Date created";
+	public static final String tabCreated = "Created";
+	public static final String expectedFilterContent = "Expected Filter Result";
+	public static final String gridViewCheck = "The Workspace should be in Grid View";
+	public static final String listViewCheck = "The Workspace should be in List View";
 	
 	// Pages
 	public static final String emailPage = "Email Page";

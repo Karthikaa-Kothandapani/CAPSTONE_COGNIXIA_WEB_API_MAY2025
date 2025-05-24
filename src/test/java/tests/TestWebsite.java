@@ -23,6 +23,7 @@ public class TestWebsite extends BaseTest {
     ExtentTest test4;
     ExtentTest test5;
     ExtentTest test6;
+    ExtentTest test7;
 
  	
  	// TestCaseID: 01
@@ -351,11 +352,11 @@ public class TestWebsite extends BaseTest {
 
 	
 	
-	// TestCaseTD: 05
+	// TestCaseTD: 06
 	// TestType: PositiveTestCase
 	// TestDescription: Test Form Preview Functionality
 	@Test(priority = 5, enabled = true)
-	public void testFormPreview() throws InterruptedException {
+	public void testFormPreview() {
 	    test5 = extent.createTest(Constants.test5);
 	    log.info(Constants.tcId + "05\r\n" +
 	             Constants.positiveTestCase + "\r\n" +
@@ -369,80 +370,75 @@ public class TestWebsite extends BaseTest {
 	    // Open preview
 	    form.openPreview();
 	    
-	    // Question 1
+	    // Question
 	    view.quesPage();
 	    AssertUtil.assertTrueWithLogAndExtent(softAssert, view.ques1(), Constants.rightQuestion, log, test5);
 	    AssertUtil.assertTrueWithLogAndExtent(softAssert, view.quesPage()!=null, Constants.questionPageHasValue, log, test5);
-	    AssertUtil.assertTrueWithLogAndExtent(softAssert, view.ques1Verification(), Constants.previewQuestionFields, log, test5);
 	    
-	    // Move to Next Question
-	    view.moveToNextQuestion();
+	    // Close
+	    view.closePreview();
+	    AssertUtil.assertTrueWithLogAndExtent(softAssert, form.checkIfExitedPreview(), Constants.exitedPreview, log, test5);
 	    
-	    // Question 2
-	    view.quesPage();
-	    AssertUtil.assertTrueWithLogAndExtent(softAssert, view.ques2(), Constants.rightQuestion, log, test5);
-	    AssertUtil.assertTrueWithLogAndExtent(softAssert, view.quesPage()!=null, Constants.questionPageHasValue, log, test5);
-	    AssertUtil.assertTrueWithLogAndExtent(softAssert, view.ques2Verification(), Constants.previewQuestionFields, log, test5);
-	    
-	    // Move to Next Question
-	    view.moveToNextQuestion();
-	    
-	    // Question 3
-	    view.quesPage();
-	    AssertUtil.assertTrueWithLogAndExtent(softAssert, view.ques3(), Constants.rightQuestion, log, test5);
-	    AssertUtil.assertTrueWithLogAndExtent(softAssert, view.quesPage()!=null, Constants.questionPageHasValue, log, test5);
-	    AssertUtil.assertTrueWithLogAndExtent(softAssert, view.ques3Verification(), Constants.previewQuestionFields, log, test5);
-	    
-	    // Move to Next Question
-	    view.moveToNextQuestion();
-	    
-	    // Question 4
-	    view.quesPage();
-	    AssertUtil.assertTrueWithLogAndExtent(softAssert, view.ques4(), Constants.rightQuestion, log, test5);
-	    AssertUtil.assertTrueWithLogAndExtent(softAssert, view.quesPage()!=null, Constants.questionPageHasValue, log, test5);
-	    AssertUtil.assertTrueWithLogAndExtent(softAssert, view.ques4Verification(), Constants.previewQuestionFields, log, test5);
-	    
-	    // Question 5
-	    view.quesPage();
-	    AssertUtil.assertTrueWithLogAndExtent(softAssert, view.ques5(), Constants.rightQuestion, log, test5);
-	    AssertUtil.assertTrueWithLogAndExtent(softAssert, view.quesPage()!=null, Constants.questionPageHasValue, log, test5);
-	    AssertUtil.assertTrueWithLogAndExtent(softAssert, view.ques5Verification(), Constants.previewQuestionFields, log, test5);
-	    
-	    // Question 6
-	    
-	    // Question 7
-	    
-	    // Question 8
-	    
-	    // Question 9
-	    
-	    // Question 10
-	    
-	    // Question 11
-	    
-	    // Question 12
-	    
-	    // Question 13
-	    
-	    // Question 14
-	    
-	    // Question 15
-	    
-	    // Question 16
-	    
-	    // Question 17
-	    
-	    // Question 18
-	    
-	    // Question 19
-	    
-	    // Question 20 
-	    
-	    // Question 21
-	    
-	    // Question 22
-	    
-	    // Question 23
+	    // Go to Workspace
+	    form.goToWorkspace();
+	    // Check Page Title
+	 	boolean workspaceText = login.dashboardOpen().contains(Constants.dashboardExpectedText);
+	 	AssertUtil.assertTrueWithLogAndExtent(softAssert, workspaceText, Constants.titleVerification, log, test5); 
+	 	
+	 	softAssert.assertAll();
+	 	log.info(Constants.logEndTest);
 	}
 
+	
+		// TestCaseTD: 06
+		// TestType: PositiveTestCase
+		// TestDescription: Test List View Filter
+		@Test(priority = 6, enabled = true)
+		public void listFilter() {
+		    test6 = extent.createTest(Constants.test6);
+		    log.info(Constants.tcId + "06\r\n" +
+		             Constants.positiveTestCase + "\r\n" +
+		             "TestDescription: " + Constants.test6);
+		    test6.info(Constants.tcId + "06\r\n" +
+		               Constants.positiveTestCase + "\r\n" +
+		               "TestDescription: " + Constants.test6);
+		    log.info(Constants.logStartTest);
+		    SoftAssert softAssert = new SoftAssert();
+		    
+		   // Get Tab Elements
+		   workspace.tabText();
+		  // AssertUtil.assertTrueWithLogAndExtent(softAssert, workspace.isInListView(), Constants.listViewCheck, log, test6);
+		   
+		   // Verify Filter
+		   AssertUtil.assertTrueWithLogAndExtent(softAssert, workspace.listViewDateCreatedVerification(), Constants.expectedFilterContent, log, test6);
+		   
+		   log.info(Constants.logEndTest);
+		   softAssert.assertAll();
+		}
+		
+		// TestCaseTD: 07
+		// TestType: PositiveTestCase
+		// TestDescription: Test Grid View Filter
+		@Test(priority = 7, enabled = true)
+		public void gridFilter() {
+			test7 = extent.createTest(Constants.test7);
+			log.info(Constants.tcId + "07\r\n" +
+				     Constants.positiveTestCase + "\r\n" +
+				     "TestDescription: " + Constants.test7);
+			test7.info(Constants.tcId + "07\r\n" +
+				      Constants.positiveTestCase + "\r\n" +
+				      "TestDescription: " + Constants.test7);
+			log.info(Constants.logStartTest);
+			SoftAssert softAssert = new SoftAssert();
+				    
+			// Switch to Grid View
+			workspace.gridview();
+			//AssertUtil.assertTrueWithLogAndExtent(softAssert, workspace.isInGridView(), Constants.gridViewCheck, log, test7);
+				   
+			// Verify Filter
+			AssertUtil.assertTrueWithLogAndExtent(softAssert, workspace.gridFormDetailsVerification(), Constants.expectedFilterContent, log, test7);
+				   
+			log.info(Constants.logEndTest);
+			softAssert.assertAll();
+		}
 }
