@@ -5,7 +5,7 @@
 <listener class-name="utils.ExtentTestListener"/>
 </listeners>
  
-  <test name="Web Functional Tests">
+  <test name="CM-3 - Test Form Creation and Preview Functionality">
 <classes>
 <class name="tests.TestWebsite"/>
 </classes>
