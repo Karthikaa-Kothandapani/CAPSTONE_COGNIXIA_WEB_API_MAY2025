@@ -41,9 +41,17 @@ public class BaseTest {
             case "chrome":
                 WebDriverManager.chromedriver().setup();
                 ChromeOptions chromeOptions = new ChromeOptions();
+
+                // Force desktop view resolution in all modes
+                chromeOptions.addArguments("--window-size=1920,1080");
+
+                // Optional: Force desktop user-agent to avoid responsive/mobile layouts
+                chromeOptions.addArguments("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/114 Safari/537.36");
+
                 if (headless.equals("true")) {
                     chromeOptions.addArguments("--headless=new");
                 }
+
                 driver = new ChromeDriver(chromeOptions);
                 log.info("Chrome started in " + (headless.equals("true") ? "headless" : "headed") + " mode.");
                 break;
@@ -75,14 +83,13 @@ public class BaseTest {
         driver.manage().window().maximize();
         log.info("Navigating to URL: " + ConfigReader.get("url"));
         driver.get(ConfigReader.get("url"));
-        
-        
-        // Create a page objects
-     	login = new LoginPage(driver);
-     	workspace = new WorkspacePage(driver);
-     	chooseForm = new ChooseFormPage(driver);
-     	form = new CreationPage(driver);
-     	view = new PreviewFormPage(driver);
+
+        // Create page objects
+        login = new LoginPage(driver);
+        workspace = new WorkspacePage(driver);
+        chooseForm = new ChooseFormPage(driver);
+        form = new CreationPage(driver);
+        view = new PreviewFormPage(driver);
     }
 
     @AfterClass
