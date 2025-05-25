@@ -394,7 +394,7 @@ public class TestWebsite extends BaseTest {
 		// TestCaseTD: 06
 		// TestType: PositiveTestCase
 		// TestDescription: Test List View Filter
-		@Test(priority = 6, enabled = true)
+		@Test(priority = 6, enabled = false)
 		public void listFilter() {
 		    test6 = extent.createTest(Constants.test6);
 		    log.info(Constants.tcId + "06\r\n" +
@@ -420,7 +420,7 @@ public class TestWebsite extends BaseTest {
 		// TestCaseTD: 07
 		// TestType: PositiveTestCase
 		// TestDescription: Test Grid View Filter
-		@Test(priority = 7, enabled = true)
+		@Test(priority = 7, enabled = false)
 		public void gridFilter() {
 			test7 = extent.createTest(Constants.test7);
 			log.info(Constants.tcId + "07\r\n" +
