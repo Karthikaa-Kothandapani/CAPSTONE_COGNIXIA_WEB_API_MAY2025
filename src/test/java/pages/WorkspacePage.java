@@ -54,6 +54,11 @@ public class WorkspacePage extends BaseTest {
 		return !list.isEnabled();
 	}
 	
+	// Switch to List View
+	public void listview() {
+		WaitUtil.waitForClickable(driver, list).click();
+	}
+	
 	// Tab Verification
 	public boolean listViewDateCreatedVerification() {
 		return WaitUtil.waitForVisible(driver, filter).getText().contains(Constants.filterCreated) &&

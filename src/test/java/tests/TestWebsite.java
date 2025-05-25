@@ -5,6 +5,7 @@ import utils.AssertUtil;
 import utils.Constants;
 import utils.ExcelUtil;
 import utils.ExtentReportManager;
+import utils.WaitUtil;
 
 import java.util.List;
 
@@ -437,6 +438,10 @@ public class TestWebsite extends BaseTest {
 				   
 			// Verify Filter
 			AssertUtil.assertTrueWithLogAndExtent(softAssert, workspace.gridFormDetailsVerification(), Constants.expectedFilterContent, log, test7);
+			
+			// Back to List View
+			workspace.listview();
+			WaitUtil.waitForPageToLoad(driver);
 				   
 			log.info(Constants.logEndTest);
 			softAssert.assertAll();
